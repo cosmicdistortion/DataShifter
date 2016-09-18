@@ -1,0 +1,11 @@
+﻿body {
+    
+}
+.page-content{
+    background: #fafafa;
+    margin-left:20px;
+    margin-right:20px;
+}
+.mdl-layout__content{
+    background: #fafafa;
+}

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Cosmicdistortion.DataShifter.Models.DBConnection>
+
+@{
+    ViewBag.Title = "Database Connections";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+    <tr>
+        <th class="mdl-data-table__cell--non-numeric">
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th class="mdl-data-table__cell--non-numeric">
+            @Html.DisplayNameFor(model => model.DataSource)
+        </th>
+        <th class="mdl-data-table__cell--non-numeric">
+            @Html.DisplayNameFor(model => model.IntegratedSecurity)
+        </th>
+        <th class="mdl-data-table__cell--non-numeric">
+            @Html.DisplayNameFor(model => model.InitialCatalog)
+        </th>
+        <th class="mdl-data-table__cell--non-numeric">
+            @Html.DisplayNameFor(model => model.Username)
+        </th>
+        <th class="mdl-data-table__cell--non-numeric">
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td class="mdl-data-table__cell--non-numeric">
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+            @Html.DisplayFor(modelItem => item.DataSource)
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+            @Html.DisplayFor(modelItem => item.IntegratedSecurity)
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+            @Html.DisplayFor(modelItem => item.InitialCatalog)
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+            @Html.DisplayFor(modelItem => item.Username)
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td class="mdl-data-table__cell--non-numeric">
+            @Html.ActionLink("Edit", "Edit", new { id=item.DBConnectionId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DBConnectionId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DBConnectionId })
+        </td>
+    </tr>
+}
+
+</table>
